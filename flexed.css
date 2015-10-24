@@ -1,0 +1,149 @@
+/*!
+ *  Flexed 0.1.0 by Jerome Indefenzo
+ *  License - MIT License
+ */
+
+/* absolutely necessary resets */
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+}
+
+/* base container */
+
+.flexed.container,
+.flexed.container .container {
+	display: flex;
+	margin: 0 -10px 0 -10px;
+}
+
+.flexed.container > .item,
+.flexed.container .container > .item {
+	flex: 1;
+	margin: 0 10px 0 10px;
+	padding: 20px;
+}
+
+/* vertical flexbox */
+
+.flexed.vertical.container,
+.flexed.container .vertical.container {
+	flex-direction: column;
+	margin: -10px 0 -10px 0;
+}
+.flexed.vertical.container > .item,
+.flexed.container .vertical.container > .item {
+	margin: 10px 0 10px 0;
+}
+
+/* spacing between adjacent containers */
+.flexed.container + .flexed.container,
+.flexed.container .container + .container {
+	margin-top: 20px;
+}
+
+/* stacking boxes */
+
+.flexed.stackable.container,
+.flexed.container .stackable.container {
+	flex-wrap: wrap;
+}
+
+.flexed.stackable.container > .item,
+.flexed.container .stackable.container > .item {
+	flex: 0 1 100%;
+}
+
+.flexed.stackable.container > .item + .item,
+.flexed.container .stackable.container > .item + .item {
+	margin-top: 10px;
+}
+
+/* responsive containers */
+
+.flexed.container { /* 0px - 479px */
+	width: 100%;
+	width: calc(100% - 20px);
+	margin: auto;
+}
+
+@media (min-width: 480px) { /* 480px - 839px */
+	.flexed.container {
+		width: 100%;
+	}
+}
+
+@media (min-width: 840px) { /* 839px - 1200px */
+	.flexed.container {
+		width: 840px;
+	}
+
+	.flexed.stackable.container > .item,
+	.flexed.container .stackable.container > .item {
+		flex: 1;
+	}
+
+	.flexed.stackable.container > .item + .item,
+	.flexed.container .stackable.container > .item + .item {
+		margin-top: 0;
+	}
+}
+
+@media (min-width: 1200px) { /* 1200px - above */
+	.flexed.container {
+		width: 1200px;
+	}
+}
+
+/* column basis widths */
+
+.flexed.container > .full.item,
+.flexed.container .container > .full.item {
+	flex-basis: 100%;
+}
+
+.flexed.container > .half.item,
+.flexed.container .container > .half.item {
+	flex-basis: 50%;
+}
+
+.flexed.container > .one.third.item,
+.flexed.container .container > .one.third.item {
+	flex-basis: 33.33%;
+}
+
+.flexed.container > .two.thirds.item,
+.flexed.container .container > .two.thirds.item {
+	flex-basis: 66.66%;
+}
+
+.flexed.container > .one.quarter.item,
+.flexed.container .container > .one.quarter.item,
+.flexed.container > .one.fourth.item,
+.flexed.container .container > .one.fourth.item {
+	flex-basis: 25%;
+}
+
+.flexed.container > .two.quarters.item,
+.flexed.container .container > .two.quarters.item,
+.flexed.container > .two.quarter.item,
+.flexed.container .container > .two.quarter.item,
+.flexed.container > .two.fourths.item,
+.flexed.container .container > .two.fourths.item {
+	flex-basis: 50%;
+}
+
+.flexed.container > .three.quarters.item,
+.flexed.container .container > .three.quarters.item,
+.flexed.container > .three.quarter.item,
+.flexed.container .container > .three.quarter.item,
+.flexed.container > .three.fourths.item,
+.flexed.container .container > .three.fourths.item {
+	flex-basis: 75%;
+}
