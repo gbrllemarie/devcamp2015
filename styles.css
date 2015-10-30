@@ -5,7 +5,7 @@ html,body{
 }
 
 .global.container#home {
-	background: #222222 url() no-repeat center center;
+	background: #222222 url('images/backgro.jpg') no-repeat center center;
 	background-size: cover;
 	min-height: 100vh;
 }
@@ -24,11 +24,14 @@ html,body{
 	text-decoration: none;
 }
 
+
 .header.item h1 {
 	font-size: 5rem;
-	color: #FFFFFF;
+	color: #222222;
 	font-family: 'Open Sans';
 	font-weight: 300;
+	text-align: center;
+
 }
 
 h1, h2, h3, h4, h5 {
