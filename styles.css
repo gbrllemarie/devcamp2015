@@ -10,29 +10,15 @@ html,body{
 	min-height: 100vh;
 }
 
-.masthead.item  {
-	background-color: #222222;
-	opacity: 0.5;
-}
-
-.masthead.item span {
-	padding: 0 10px 0 10px;
-}
-
-.masthead.item a {
-	color: #EFEFEF;
-	text-decoration: none;
-}
-
-
 .header.item h1 {
-	font-size: 5rem;
+	font-size: 5.175rem;
 	color: #222222;
 	font-family: 'Open Sans';
 	font-weight: 300;
 	text-align: center;
-
+	padding-top: 20vh;
 }
+
 
 h1, h2, h3, h4, h5 {
 	font-family: 'Roboto', 'Open Sans';
