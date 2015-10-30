@@ -5,9 +5,30 @@ html,body{
 }
 
 .global.container#home {
-	background: #EFEFEF url() no-repeat center center;
+	background: #222222 url() no-repeat center center;
 	background-size: cover;
 	min-height: 100vh;
+}
+
+.masthead.item  {
+	background-color: #222222;
+	opacity: 0.5;
+}
+
+.masthead.item span {
+	padding: 0 10px 0 10px;
+}
+
+.masthead.item a {
+	color: #EFEFEF;
+	text-decoration: none;
+}
+
+.header.item h1 {
+	font-size: 5rem;
+	color: #FFFFFF;
+	font-family: 'Open Sans';
+	font-weight: 300;
 }
 
 h1, h2, h3, h4, h5 {
