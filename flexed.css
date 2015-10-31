@@ -1,9 +1,9 @@
 /*!
- *  Flexed 0.1.0 by Jerome Indefenzo
+ *  Flexed 0.2.0 by Jerome Indefenzo
  *  License - MIT License
  */
 
-/* absolutely necessary resets */
+/* necessary resets */
 *, *:after, *:before {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -15,37 +15,54 @@ html, body {
 	padding: 0px;
 }
 
-/* base container */
+/* base containers */
 
 .flexed.container,
 .flexed.container .container {
 	display: flex;
-	margin: 0 -10px 0 -10px;
+	flex-direction: row;
+	margin: 0 -10px;
+}
+
+.vertical.flexed.container,
+.flexed.container .vertical.container {
+	display: flex;
+	flex-direction: column;
+	margin: -10px 0;
 }
 
 .flexed.container > .item,
 .flexed.container .container > .item {
 	flex: 1;
-	margin: 0 10px 0 10px;
+	margin: 0 10px;
 	padding: 20px;
 }
 
-/* vertical flexbox */
-
-.flexed.vertical.container,
-.flexed.container .vertical.container {
-	flex-direction: column;
-	margin: -10px 0 -10px 0;
+.flexed.container > .item:first-child,
+.flexed.container .container > .item:first-child {
+	margin-left: 0;
 }
-.flexed.vertical.container > .item,
+
+.flexed.container > .item:last-child,
+.flexed.container .container > .item:last-child {
+	margin-right: 0;
+}
+
+.vertical.flexed.container > .item,
 .flexed.container .vertical.container > .item {
-	margin: 10px 0 10px 0;
+	flex: 1;
+	margin: 10px 0;
+	padding: 20px;
 }
 
-/* spacing between adjacent containers */
-.flexed.container + .flexed.container,
-.flexed.container .container + .container {
-	margin-top: 20px;
+.vertical.flexed.container > .item:first-child,
+.flexed.container .vertical.container > .item:first-child {
+	margin-top: 0;
+}
+
+.vertical.flexed.container > .item:last-child,
+.flexed.container .vertical.container > .item:last-child {
+	margin-bottom: 0;
 }
 
 /* stacking boxes */
@@ -58,11 +75,6 @@ html, body {
 .flexed.stackable.container > .item,
 .flexed.container .stackable.container > .item {
 	flex: 0 1 100%;
-}
-
-.flexed.stackable.container > .item + .item,
-.flexed.container .stackable.container > .item + .item {
-	margin-top: 10px;
 }
 
 /* responsive containers */
@@ -88,11 +100,6 @@ html, body {
 	.flexed.container .stackable.container > .item {
 		flex: 1;
 	}
-
-	.flexed.stackable.container > .item + .item,
-	.flexed.container .stackable.container > .item + .item {
-		margin-top: 0;
-	}
 }
 
 @media (min-width: 1200px) { /* 1200px - above */
@@ -101,33 +108,35 @@ html, body {
 	}
 }
 
-/* column basis widths */
+/* column presized widths */
 
 .flexed.container > .full.item,
 .flexed.container .container > .full.item {
-	flex-basis: 100%;
+	flex: 0 1 100%;
 }
 
 .flexed.container > .half.item,
-.flexed.container .container > .half.item {
-	flex-basis: 50%;
+.flexed.container .container > .half.item,
+.flexed.container > .one.half.item,
+.flexed.container .container > .one.half.item {
+	flex: 0 1 50%;
 }
 
 .flexed.container > .one.third.item,
 .flexed.container .container > .one.third.item {
-	flex-basis: 33.33%;
+	flex: 0 1 33.33%;
 }
 
 .flexed.container > .two.thirds.item,
 .flexed.container .container > .two.thirds.item {
-	flex-basis: 66.66%;
+	flex: 0 1 66.66%;
 }
 
 .flexed.container > .one.quarter.item,
 .flexed.container .container > .one.quarter.item,
 .flexed.container > .one.fourth.item,
 .flexed.container .container > .one.fourth.item {
-	flex-basis: 25%;
+	flex: 0 1 25%;
 }
 
 .flexed.container > .two.quarters.item,
@@ -136,7 +145,7 @@ html, body {
 .flexed.container .container > .two.quarter.item,
 .flexed.container > .two.fourths.item,
 .flexed.container .container > .two.fourths.item {
-	flex-basis: 50%;
+	flex: 0 1 50%;
 }
 
 .flexed.container > .three.quarters.item,
@@ -145,5 +154,5 @@ html, body {
 .flexed.container .container > .three.quarter.item,
 .flexed.container > .three.fourths.item,
 .flexed.container .container > .three.fourths.item {
-	flex-basis: 75%;
+	flex: 0 1 75%;
 }

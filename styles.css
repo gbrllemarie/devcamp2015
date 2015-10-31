@@ -23,7 +23,7 @@ html,body{
 .content {
 	background: #222222 url('images/backgro-repeat-y.png') repeat-y center center;
 	background-size: 100%;
-	min-height: 1000px;
+	min-height: 600px;
 	color: #EFEFEF;
 	font-family: 'Yantramanav';
 	font-weight: 100;
@@ -36,4 +36,32 @@ html,body{
 .description.item h2 {
 	font-weight: 300;
 	font-size: 4rem;
+}
+
+.photos {
+	background: #222222 url('images/backgro-repeat-y.png') repeat-y center center;
+}
+.photos a {
+	height: 400px;
+	margin: 0px !important;
+}
+
+.photos #img-1 {
+	background: #EFEFEF url('images/7.jpg') no-repeat center center;
+	background-size: cover;
+}
+
+.photos #img-2 {
+	background: #EFEFEF url('images/11.jpg') no-repeat center center;
+	background-size: cover;
+}
+
+.photos #img-3 {
+	background: #EFEFEF url('images/8.jpg') no-repeat;
+	background-size: cover;
+}
+
+.photos #img-4 {
+	background: #EFEFEF url('images/10.jpg') no-repeat center center;
+	background-size: cover;
 }
