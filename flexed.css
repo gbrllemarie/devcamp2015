@@ -1,39 +1,56 @@
 /*!
- *  Flexed 0.2.0 by Jerome Indefenzo
- *  License - MIT License
- */
+*  Flexed 0.2.2 by Jerome Indefenzo
+*  License - MIT License
+*/
 
 /* necessary resets */
 *, *:after, *:before {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
 html, body {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 }
 
 /* base containers */
 
 .flexed.container,
 .flexed.container .container {
+	-webkit-flex-direction: row;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	    -ms-flex-direction: row;
+
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	flex-direction: row;
+
 	margin: 0 -10px;
 }
 
 .vertical.flexed.container,
 .flexed.container .vertical.container {
+	-webkit-flex-direction: column;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	    -ms-flex-direction: column;
+
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	flex-direction: column;
+
 	margin: -10px 0;
 }
 
 .flexed.container > .item,
 .flexed.container .container > .item {
-	flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+
 	margin: 0 10px;
 	padding: 20px;
 }
@@ -50,7 +67,10 @@ html, body {
 
 .vertical.flexed.container > .item,
 .flexed.container .vertical.container > .item {
-	flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+
 	margin: 10px 0;
 	padding: 20px;
 }
@@ -67,42 +87,55 @@ html, body {
 
 /* stacking boxes */
 
-.flexed.stackable.container,
-.flexed.container .stackable.container {
-	flex-wrap: wrap;
-}
+@media (max-width: 840px) {
+	/* 0px - 840px */
+	.flexed.stackable.container,
+	.flexed.container .stackable.container {
+		-webkit-flex-wrap: wrap;
+		    -ms-flex-wrap: wrap;
+		        flex-wrap: wrap;
+	}
 
-.flexed.stackable.container > .item,
-.flexed.container .stackable.container > .item {
-	flex: 0 1 100%;
+	.flexed.stackable.container > .item,
+	.flexed.container .stackable.container > .item {
+		-webkit-flex: 0 1 100% !important;
+		    -ms-flex: 0 1 100% !important;
+		        flex: 0 1 100% !important;
+
+		margin: 0;
+	}
+
+	.flexed.stackable.container > .item + .item,
+	.flexed.container .stackable.container > .item + .item {
+		margin-top: 20px;
+	}
 }
 
 /* responsive containers */
 
-.flexed.container { /* 0px - 479px */
+.flexed.container {
+	/* 0px - 479px */
 	width: 100%;
 	width: calc(100% - 20px);
 	margin: auto;
 }
 
-@media (min-width: 480px) { /* 480px - 839px */
+@media (min-width: 480px) {
+	/* 480px - 839px */
 	.flexed.container {
 		width: 100%;
 	}
 }
 
-@media (min-width: 840px) { /* 839px - 1200px */
+@media (min-width: 840px) {
+	/* 839px - 1200px */
 	.flexed.container {
 		width: 840px;
 	}
-
-	.flexed.stackable.container > .item,
-	.flexed.container .stackable.container > .item {
-		flex: 1;
-	}
 }
 
-@media (min-width: 1200px) { /* 1200px - above */
+@media (min-width: 1200px) {
+	/* 1200px - above */
 	.flexed.container {
 		width: 1200px;
 	}
@@ -112,31 +145,41 @@ html, body {
 
 .flexed.container > .full.item,
 .flexed.container .container > .full.item {
-	flex: 0 1 100%;
+	-webkit-flex: 0 1 100%;
+	    -ms-flex: 0 1 100%;
+	        flex: 0 1 100%;
 }
 
 .flexed.container > .half.item,
 .flexed.container .container > .half.item,
 .flexed.container > .one.half.item,
 .flexed.container .container > .one.half.item {
-	flex: 0 1 50%;
+	-webkit-flex: 0 1 50%;
+	    -ms-flex: 0 1 50%;
+	        flex: 0 1 50%;
 }
 
 .flexed.container > .one.third.item,
 .flexed.container .container > .one.third.item {
-	flex: 0 1 33.33%;
+	-webkit-flex: 0 1 33.33%;
+	    -ms-flex: 0 1 33.33%;
+	        flex: 0 1 33.33%;
 }
 
 .flexed.container > .two.thirds.item,
 .flexed.container .container > .two.thirds.item {
-	flex: 0 1 66.66%;
+	-webkit-flex: 0 1 66.66%;
+	    -ms-flex: 0 1 66.66%;
+	        flex: 0 1 66.66%;
 }
 
 .flexed.container > .one.quarter.item,
 .flexed.container .container > .one.quarter.item,
 .flexed.container > .one.fourth.item,
 .flexed.container .container > .one.fourth.item {
-	flex: 0 1 25%;
+	-webkit-flex: 0 1 25%;
+	    -ms-flex: 0 1 25%;
+	        flex: 0 1 25%;
 }
 
 .flexed.container > .two.quarters.item,
@@ -145,7 +188,9 @@ html, body {
 .flexed.container .container > .two.quarter.item,
 .flexed.container > .two.fourths.item,
 .flexed.container .container > .two.fourths.item {
-	flex: 0 1 50%;
+	-webkit-flex: 0 1 50%;
+	    -ms-flex: 0 1 50%;
+	        flex: 0 1 50%;
 }
 
 .flexed.container > .three.quarters.item,
@@ -154,5 +199,7 @@ html, body {
 .flexed.container .container > .three.quarter.item,
 .flexed.container > .three.fourths.item,
 .flexed.container .container > .three.fourths.item {
-	flex: 0 1 75%;
+	-webkit-flex: 0 1 75%;
+	    -ms-flex: 0 1 75%;
+	        flex: 0 1 75%;
 }
