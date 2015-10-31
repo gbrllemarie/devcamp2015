@@ -11,7 +11,7 @@ html,body{
 }
 
 .header.item h1 {
-	font-size: 5.175rem;
+	font-size: 4.375rem;
 	color: #222222;
 	font-family: 'Open Sans';
 	font-weight: 300;
@@ -23,14 +23,14 @@ html,body{
 .content {
 	background: #222222 url('images/backgro-repeat-y.png') repeat-y center center;
 	background-size: 100%;
-	min-height: 600px;
+	min-height: 635px;
 	color: #EFEFEF;
 	font-family: 'Yantramanav';
 	font-weight: 100;
 }
 
 .description.item {
-	font-size: 2rem;
+	font-size: 1.75rem;
 }
 
 .description.item h2 {
@@ -40,9 +40,10 @@ html,body{
 
 .photos {
 	background: #222222 url('images/backgro-repeat-y.png') repeat-y center center;
+	background-size: 100%;
 }
 .photos a {
-	height: 400px;
+	height: 375px;
 	margin: 0px !important;
 }
 
@@ -64,4 +65,15 @@ html,body{
 .photos #img-4 {
 	background: #EFEFEF url('images/10.jpg') no-repeat center center;
 	background-size: cover;
+}
+
+.photos #img-5 {
+	background: #EFEFEF url('images/6.jpg') no-repeat center center;
+	background-size: cover;
+}
+
+.photos #img-6 {
+	background: #EFEFEF url('images/14.jpg') no-repeat;
+	background-size: cover;
+	filter: grayscale(1);
 }
